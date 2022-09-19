@@ -9,7 +9,7 @@ public:
     void initializeGrayCanvas();
     void createHeart();
 
-    std::vector<uint8_t> *displayCanvas() {return &m_canvasData;}
+    std::vector<uint8_t> &getCanvasData() {return m_canvasData;}
 
 private:
     std::vector<uint8_t> m_canvasData;

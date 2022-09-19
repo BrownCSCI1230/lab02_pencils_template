@@ -70,22 +70,22 @@ void SupportCanvas2D::scaleCanvas() {
 }
 
 void SupportCanvas2D::scaleGray(int smallIndex, int bigIndex) {
-    std::vector<uint8_t> *canvasData = m_grayCanvas->displayCanvas();
-    if (canvasData->size() == 100) {
-        m_data[smallIndex] = canvasData->at(bigIndex);
-        m_data[smallIndex + 1] = canvasData->at(bigIndex);
-        m_data[smallIndex + 2] = canvasData->at(bigIndex);
+    std::vector<uint8_t> &canvasData = m_grayCanvas->getCanvasData();
+    if (canvasData.size() == 100) {
+        m_data[smallIndex]     = canvasData[bigIndex];
+        m_data[smallIndex + 1] = canvasData[bigIndex];
+        m_data[smallIndex + 2] = canvasData[bigIndex];
         m_data[smallIndex + 3] = 255;
     }
 }
 
 void SupportCanvas2D::scaleColor(int smallIndex, int bigIndex) {
-    std::vector<RGBA> *canvasData = m_colorCanvas->displayCanvas();
-    if (canvasData->size() == 100) {
-        m_data[smallIndex] = m_colorCanvas->displayCanvas()->at(bigIndex).r;
-        m_data[smallIndex + 1] = m_colorCanvas->displayCanvas()->at(bigIndex).g;
-        m_data[smallIndex + 2] = m_colorCanvas->displayCanvas()->at(bigIndex).b;
-        m_data[smallIndex + 3] = m_colorCanvas->displayCanvas()->at(bigIndex).a;
+    std::vector<RGBA> &canvasData = m_colorCanvas->getCanvasData();
+    if (canvasData.size() == 100) {
+        m_data[smallIndex]     = canvasData[bigIndex].r;
+        m_data[smallIndex + 1] = canvasData[bigIndex].g;
+        m_data[smallIndex + 2] = canvasData[bigIndex].b;
+        m_data[smallIndex + 3] = canvasData[bigIndex].a;
     }
 }
 

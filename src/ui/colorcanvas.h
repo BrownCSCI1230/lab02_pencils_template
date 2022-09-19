@@ -8,7 +8,7 @@ class ColorCanvas
 public:
     void initializeColorCanvas();
 
-    std::vector<RGBA> *displayCanvas() {return &m_canvasData;}
+    std::vector<RGBA> &getCanvasData() {return m_canvasData;}
 
     void mouseDown(int x, int y);
     void mouseMove(int x, int y);

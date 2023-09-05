@@ -8,13 +8,24 @@ void ColorCanvas::initializeColorCanvas() {
 
     // Task 8: call the drawFlower() function to display the canvas with
     //         a couple of flowers
+
+    // Task 7: uncomment this function
+//    testPosToIndex();
+}
+
+void ColorCanvas::testPosToIndex() {
+    // posToIndex() visual tester
+    m_canvasData.at(posToIndex(0,0)) = RGBA{255, 0, 0};
+    m_canvasData.at(posToIndex(0,5)) = RGBA{0, 255, 0};
+    m_canvasData.at(posToIndex(3,5)) = RGBA{0, 0, 255};
 }
 
 int ColorCanvas::posToIndex(int x, int y) {
-    // Task 7: convert an (x, y) position into an index you
-    //         can use to index into the array of canvas data
+    // Task 7: debug this function so that it converts an (x, y) position
+    //         into an index you can use to index into the array of canvas data.
 
-    return 0;
+    int index = x * 10 + y;
+    return index;
 }
 
 void ColorCanvas::drawFlower(int x, int y) {
